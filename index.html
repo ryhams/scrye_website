@@ -3,45 +3,142 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Scrye — Time is your most valuable currency.">
   <title>Scrye</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: #080808;
+    html, body {
+      background: #000000;
       color: #ffffff;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+      min-height: 100vh;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 48px;
+      border-bottom: 1px solid #111;
+    }
+    .nav-logo {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a {
+      color: #666;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-links .instagram {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    hero {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
       text-align: center;
-      padding: 40px 20px;
+      padding: 120px 24px 80px;
+      min-height: 85vh;
     }
-    h1 { font-size: 3rem; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 16px; }
-    p { font-size: 1.1rem; color: #aaaaaa; max-width: 480px; line-height: 1.6; margin-bottom: 32px; }
-    .badge {
-      display: inline-block;
-      border: 1px solid #333;
-      border-radius: 8px;
-      padding: 12px 24px;
-      font-size: 0.9rem;
-      color: #aaaaaa;
+    .app-icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 26px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 60px rgba(255,255,255,0.06);
+    }
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      background: linear-gradient(180deg, #ffffff 60%, #666666 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .tagline {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: #555;
+      max-width: 480px;
+      line-height: 1.6;
+      margin-bottom: 48px;
+    }
+    .app-store-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      color: #000;
+      border-radius: 12px;
+      padding: 14px 28px;
+      font-size: 0.95rem;
+      font-weight: 600;
       text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: opacity 0.2s;
     }
-    .badge:hover { border-color: #666; color: #fff; }
-    footer { position: fixed; bottom: 24px; font-size: 0.8rem; color: #444; }
-    footer a { color: #444; text-decoration: none; margin: 0 8px; }
-    footer a:hover { color: #888; }
+    .app-store-badge:hover { opacity: 0.85; }
+    .badge-sub { font-size: 0.7rem; font-weight: 400; opacity: 0.6; display: block; }
+    footer {
+      border-top: 1px solid #111;
+      padding: 32px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-copy { font-size: 0.8rem; color: #333; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 0.8rem; color: #333; text-decoration: none; }
+    .footer-links a:hover { color: #888; }
+    @media (max-width: 600px) {
+      nav { padding: 20px 24px; }
+      footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+    }
   </style>
 </head>
 <body>
-  <h1>Scrye</h1>
-  <p>A screen time app built to help you reclaim your time and build healthier habits.</p>
-  <a class="badge" href="#">Coming soon to the App Store</a>
+  <nav>
+    <a class="nav-logo" href="/">Scrye</a>
+    <div class="nav-links">
+      <a class="instagram" href="https://instagram.com/scrye.app" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        Instagram
+      </a>
+      <a href="mailto:scrye.app@gmail.com">Contact</a>
+    </div>
+  </nav>
+
+  <hero>
+    <img class="app-icon" src="/icon.png" alt="Scrye app icon">
+    <h1>Time is your most<br>valuable currency.</h1>
+    <p class="tagline">Scrye helps you understand and take control of your screen time — so you can spend it on what actually matters.</p>
+    <a class="app-store-badge" href="#">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.19 1.3-2.17 3.88.03 3.07 2.69 4.1 2.72 4.11l-.1.49zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      <span><span class="badge-sub">Coming soon to the</span>App Store</span>
+    </a>
+  </hero>
+
   <footer>
-    <a href="/privacy.html">Privacy Policy</a>
-    <a href="/terms.html">Terms of Service</a>
+    <span class="footer-copy">&copy; 2026 Scrye. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+      <a href="mailto:scrye.app@gmail.com">scrye.app@gmail.com</a>
+    </div>
   </footer>
 </body>
 </html>
