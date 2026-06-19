@@ -2,62 +2,229 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Scrye Terms of Service">
   <title>Terms of Service — Scrye</title>
+  <link rel="icon" type="image/png" href="/images/icon.png">
+  <link rel="apple-touch-icon" href="/images/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: #000000;
-      color: #dddddd;
-      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 60px 24px;
-      line-height: 1.7;
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --orange: #F5820D;
+      --orange-soft: #FF9E2C;
+      --bg: #000;
+      --bg-soft: #000;
+      --card: #101011;
+      --border: rgba(255,255,255,0.07);
+      --border-mid: rgba(255,255,255,0.12);
+      --text: #fff;
+      --secondary: #8A8A8F;
+      --tertiary: #5A5A5F;
+      --dim: #2E2E32;
+      --display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro', 'Inter', sans-serif;
+      --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
-    h1 { font-size: 2rem; color: #fff; margin-bottom: 8px; }
-    .meta { font-size: 0.85rem; color: #444; margin-bottom: 48px; }
-    h2 { font-size: 1rem; color: #fff; margin: 36px 0 12px; text-transform: uppercase; letter-spacing: 0.05em; }
-    p { margin-bottom: 16px; color: #666; }
-    a { color: #888; }
-    nav { margin-bottom: 48px; }
-    nav a { color: #444; text-decoration: none; font-size: 0.9rem; }
-    nav a:hover { color: #aaa; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 40px;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    nav.scrolled { border-bottom-color: var(--border); background: rgba(0,0,0,0.8); }
+    .nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+    .nav-logo img { width: 30px; height: 30px; border-radius: 8px; }
+    .nav-logo span { font-family: var(--display); font-size: 1.15rem; font-weight: 700; color: var(--text); letter-spacing: -0.01em; }
+    .nav-right { display: flex; gap: 26px; align-items: center; }
+    .nav-right a { color: var(--secondary); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+    .nav-right a:hover { color: var(--text); }
+    .nav-cta {
+      color: var(--text) !important; background: transparent;
+      border: 1px solid var(--border-mid);
+      border-radius: 9px; padding: 8px 18px;
+      font-weight: 600 !important;
+      transition: border-color 0.2s, background 0.2s !important;
+    }
+    .nav-cta:hover { border-color: rgba(255,255,255,0.28); background: rgba(255,255,255,0.04); }
+
+    .doc {
+      position: relative; z-index: 2;
+      max-width: 760px; margin: 0 auto;
+      padding: 160px 40px 120px;
+    }
+    .doc-back {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--secondary); text-decoration: none;
+      font-size: 0.85rem; font-weight: 500;
+      margin-bottom: 40px; transition: color 0.2s;
+    }
+    .doc-back:hover { color: var(--text); }
+    .doc-back svg { width: 16px; height: 16px; }
+
+    .doc h1 {
+      font-family: var(--display);
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      font-weight: 800; letter-spacing: -0.04em;
+      line-height: 1.05; margin-bottom: 16px;
+    }
+    .doc-updated {
+      display: inline-block;
+      font-size: 0.8rem; font-weight: 600;
+      color: var(--secondary);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-mid);
+      border-radius: 100px; padding: 5px 14px;
+      margin-bottom: 48px;
+    }
+    .doc h2 {
+      font-family: var(--display);
+      font-size: 1.4rem; font-weight: 700;
+      letter-spacing: -0.025em;
+      margin: 48px 0 16px; padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .doc h2:first-of-type { border-top: none; padding-top: 0; }
+    .doc h3 {
+      font-family: var(--display);
+      font-size: 1.05rem; font-weight: 700;
+      letter-spacing: -0.01em;
+      margin: 28px 0 10px; color: var(--text);
+    }
+    .doc p {
+      font-size: 1rem; color: var(--secondary);
+      line-height: 1.75; margin-bottom: 16px;
+    }
+    .doc p strong { color: var(--text); font-weight: 600; }
+    .doc a { color: var(--orange-soft); text-decoration: none; border-bottom: 1px solid rgba(245,130,13,0.3); transition: border-color 0.2s; }
+    .doc a:hover { border-bottom-color: var(--orange-soft); }
+
+    footer {
+      position: relative; z-index: 2;
+      border-top: 1px solid var(--border);
+      padding: 44px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 20px;
+      max-width: 1280px; margin: 0 auto;
+    }
+    .foot-left { display: flex; align-items: center; gap: 12px; }
+    .foot-left img { width: 26px; height: 26px; border-radius: 7px; }
+    .foot-left .fn { font-family: var(--display); font-weight: 700; font-size: 1rem; }
+    .foot-left .fc { font-size: 0.78rem; color: var(--tertiary); margin-top: 2px; }
+    .foot-links { display: flex; gap: 26px; flex-wrap: wrap; }
+    .foot-links a { font-size: 0.82rem; color: var(--secondary); text-decoration: none; transition: color 0.2s; }
+    .foot-links a:hover { color: var(--text); }
+
+    @media (max-width: 768px) {
+      nav { padding: 15px 22px; }
+      .nav-right .hm { display: none; }
+      .doc { padding: 130px 22px 90px; }
+      footer { padding: 40px 22px; flex-direction: column; align-items: flex-start; }
+    }
   </style>
 </head>
 <body>
-  <nav><a href="/index.html">&#8592; Scrye</a></nav>
-  <h1>Terms of Service</h1>
-  <p class="meta">Last updated: March 16, 2026</p>
 
-  <h2>Agreement</h2>
-  <p>By downloading or using Scrye, you agree to be bound by these terms. These terms apply to all users of the app.</p>
+  <nav id="nav">
+    <a class="nav-logo" href="/">
+      <img src="/images/icon.png" alt="Scrye">
+      <span>Scrye</span>
+    </a>
+    <div class="nav-right">
+      <a href="/#how" class="hm">How it works</a>
+      <a href="https://instagram.com/scrye.app" target="_blank" rel="noopener" class="hm">Instagram</a>
+      <a href="/#get" class="nav-cta">Get the App</a>
+    </div>
+  </nav>
 
-  <h2>License</h2>
-  <p>Scrye grants you a personal, non-transferable, non-exclusive license to use the app on any Apple device you own or control, subject to these terms and the Apple App Store Terms of Service. This license does not include the right to modify, distribute, sublicense, or create derivative works of the app.</p>
+  <main class="doc">
+    <a href="/" class="doc-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to home
+    </a>
 
-  <h2>Permitted Use</h2>
-  <p>Scrye is intended for personal screen time management. You agree not to use the app for any unlawful purpose, attempt to reverse-engineer or tamper with the app, or interfere with its normal operation.</p>
+    <h1>Terms of Service</h1>
+    <span class="doc-updated">Last updated: June 1, 2026</span>
 
-  <h2>Apple's Frameworks</h2>
-  <p>Scrye relies on Apple's Screen Time API and Family Controls framework. Functionality may change if Apple modifies or restricts access to these frameworks. Scrye is an independent product and is not affiliated with, endorsed by, or sponsored by Apple Inc.</p>
+    <h2>About These Terms</h2>
+    <p>These Terms of Service ("Terms") govern your use of the Scrye iOS app ("Scrye", "the app"). By downloading or using Scrye, you agree to these Terms.</p>
 
-  <h2>Intellectual Property</h2>
-  <p>All content, design, and code within Scrye is owned by its developer. Nothing in these terms transfers any intellectual property rights to you.</p>
+    <h2>License Grant</h2>
+    <p>Scrye grants you a personal, non-transferable, non-exclusive license to use the app on Apple devices that you own or control, subject to these Terms and Apple's standard End User License Agreement. You may not modify, distribute, sublicense, or commercially exploit the app.</p>
 
-  <h2>Disclaimer of Warranties</h2>
-  <p>Scrye is provided on an "as is" and "as available" basis. We make no representations or warranties of any kind, express or implied, regarding the reliability, accuracy, or availability of the app. Your use of Scrye is at your own risk.</p>
+    <h2>Permitted Use</h2>
+    <p>The app is provided for personal screen time management. You agree not to reverse-engineer, decompile, tamper with, or otherwise misuse the service. You agree not to use the app for any unlawful purpose or in a manner that could damage, disable, or impair the service.</p>
 
-  <h2>Limitation of Liability</h2>
-  <p>To the maximum extent permitted by applicable law, the developer of Scrye shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of or inability to use the app, even if advised of the possibility of such damages.</p>
+    <h2>Apple Frameworks</h2>
+    <p>Scrye depends on Apple's Screen Time API and Family Controls framework. Functionality is subject to changes Apple may make to these frameworks at any time. Scrye operates independently from Apple, Inc., and Apple has no obligation to provide support or maintenance for the app.</p>
 
-  <h2>Changes to These Terms</h2>
-  <p>We may revise these terms from time to time. When we do, we will update the date at the top of this page. Material changes will be noted in App Store release notes. Continued use of the app after a revision constitutes your acceptance of the updated terms.</p>
+    <h2>Subscriptions</h2>
+    <p>Scrye is offered as a subscription service. A Scrye subscription unlocks access to all of Scrye's screen time management features, including daily limits, app shielding, focus sessions, scheduled blocks, streak tracking, and progress reports. Without an active subscription, the app's core features are not available.</p>
+    <p>Scrye offers auto-renewing subscriptions. Subscription duration, pricing, and any free trial terms are displayed within the app at the point of purchase and on Scrye's App Store listing.</p>
+    <h3>Auto-renewal</h3>
+    <p>Subscriptions automatically renew at the end of each billing period unless cancelled at least 24 hours before the renewal date. Renewal charges are processed by Apple through your Apple ID at the price disclosed at the time of purchase (subject to any future price changes Apple notifies you of in advance).</p>
+    <h3>How to cancel</h3>
+    <p>You can cancel your subscription at any time by going to Settings → [Your Apple ID] → Subscriptions on your iPhone or iPad. Cancellation takes effect at the end of the current billing period — you retain access until then.</p>
+    <h3>Free trials</h3>
+    <p>If a free trial is offered, it converts to a paid subscription at the end of the trial period unless you cancel at least 24 hours before the trial ends.</p>
+    <h3>Refunds</h3>
+    <p>All purchases are processed by Apple. Refund requests are handled directly through Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> or via Settings → [Your Apple ID] → Subscriptions → (your subscription) → Request Refund. Scrye is not able to issue refunds directly.</p>
 
-  <h2>Governing Law</h2>
-  <p>These terms are governed by the laws of the Province of Ontario, Canada, without regard to conflict of law principles.</p>
+    <h2>Intellectual Property</h2>
+    <p>All content, design, code, trademarks, and other intellectual property in the app are owned by the developer. These Terms do not grant you any rights to use the developer's trademarks, logos, or other proprietary materials without prior written consent.</p>
 
-  <h2>Contact</h2>
-  <p>Questions about these terms can be directed to <a href="mailto:scrye.app@gmail.com">scrye.app@gmail.com</a>.</p>
+    <h2>Warranty Disclaimer</h2>
+    <p>Scrye is provided on an "as is" and "as available" basis without warranties of any kind, either express or implied. The developer does not guarantee that the app will be uninterrupted, error-free, accurate, or meet your specific requirements. Screen Time tracking depends on Apple's DeviceActivity framework and may be subject to delays, gaps, or inaccuracies outside the developer's control.</p>
+
+    <h2>Limitation of Liability</h2>
+    <p>To the maximum extent permitted by law, the developer shall not be liable for any indirect, incidental, consequential, or special damages arising out of or in connection with your use of the app, including but not limited to loss of data, loss of productivity, or any inability to access apps that have been shielded.</p>
+
+    <h2>Updates to These Terms</h2>
+    <p>These Terms may be revised from time to time. Material changes will be reflected in the "Last updated" date above and noted in App Store release notes. Continued use of the app following an update constitutes acceptance of the revised Terms.</p>
+
+    <h2>Governing Law and Jurisdiction</h2>
+    <p>These Terms are governed by the laws of the Province of Ontario, Canada, without regard to its conflict-of-law principles. Any disputes shall be subject to the exclusive jurisdiction of the courts of Ontario, Canada.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about these Terms can be directed to <a href="mailto:scrye.app@gmail.com">scrye.app@gmail.com</a>.</p>
+  </main>
+
+  <footer>
+    <div class="foot-left">
+      <img src="/images/icon.png" alt="Scrye">
+      <div>
+        <div class="fn">Scrye</div>
+        <div class="fc">© 2026 Scrye. All rights reserved.</div>
+      </div>
+    </div>
+    <div class="foot-links">
+      <a href="https://instagram.com/scrye.app" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://tiktok.com/@scrye.app" target="_blank" rel="noopener">TikTok</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="mailto:scrye.app@gmail.com">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+  </script>
+
 </body>
 </html>

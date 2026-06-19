@@ -2,55 +2,236 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Scrye Privacy Policy">
   <title>Privacy Policy — Scrye</title>
+  <link rel="icon" type="image/png" href="/images/icon.png">
+  <link rel="apple-touch-icon" href="/images/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: #000000;
-      color: #dddddd;
-      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 60px 24px;
-      line-height: 1.7;
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --orange: #F5820D;
+      --orange-soft: #FF9E2C;
+      --bg: #000;
+      --bg-soft: #000;
+      --card: #101011;
+      --border: rgba(255,255,255,0.07);
+      --border-mid: rgba(255,255,255,0.12);
+      --text: #fff;
+      --secondary: #8A8A8F;
+      --tertiary: #5A5A5F;
+      --dim: #2E2E32;
+      --display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro', 'Inter', sans-serif;
+      --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
-    h1 { font-size: 2rem; color: #fff; margin-bottom: 8px; }
-    .meta { font-size: 0.85rem; color: #444; margin-bottom: 48px; }
-    h2 { font-size: 1rem; color: #fff; margin: 36px 0 12px; text-transform: uppercase; letter-spacing: 0.05em; }
-    p { margin-bottom: 16px; color: #666; }
-    a { color: #888; }
-    nav { margin-bottom: 48px; }
-    nav a { color: #444; text-decoration: none; font-size: 0.9rem; }
-    nav a:hover { color: #aaa; }
-    strong { color: #ccc; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 40px;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    nav.scrolled { border-bottom-color: var(--border); background: rgba(0,0,0,0.8); }
+    .nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+    .nav-logo img { width: 30px; height: 30px; border-radius: 8px; }
+    .nav-logo span { font-family: var(--display); font-size: 1.15rem; font-weight: 700; color: var(--text); letter-spacing: -0.01em; }
+    .nav-right { display: flex; gap: 26px; align-items: center; }
+    .nav-right a { color: var(--secondary); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+    .nav-right a:hover { color: var(--text); }
+    .nav-cta {
+      color: var(--text) !important; background: transparent;
+      border: 1px solid var(--border-mid);
+      border-radius: 9px; padding: 8px 18px;
+      font-weight: 600 !important;
+      transition: border-color 0.2s, background 0.2s !important;
+    }
+    .nav-cta:hover { border-color: rgba(255,255,255,0.28); background: rgba(255,255,255,0.04); }
+
+    .doc {
+      position: relative; z-index: 2;
+      max-width: 760px; margin: 0 auto;
+      padding: 160px 40px 120px;
+    }
+    .doc-back {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--secondary); text-decoration: none;
+      font-size: 0.85rem; font-weight: 500;
+      margin-bottom: 40px; transition: color 0.2s;
+    }
+    .doc-back:hover { color: var(--text); }
+    .doc-back svg { width: 16px; height: 16px; }
+
+    .doc h1 {
+      font-family: var(--display);
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      font-weight: 800; letter-spacing: -0.04em;
+      line-height: 1.05; margin-bottom: 16px;
+    }
+    .doc-updated {
+      display: inline-block;
+      font-size: 0.8rem; font-weight: 600;
+      color: var(--secondary);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-mid);
+      border-radius: 100px; padding: 5px 14px;
+      margin-bottom: 48px;
+    }
+    .doc h2 {
+      font-family: var(--display);
+      font-size: 1.4rem; font-weight: 700;
+      letter-spacing: -0.025em;
+      margin: 48px 0 16px; padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .doc h2:first-of-type { border-top: none; padding-top: 0; }
+    .doc h3 {
+      font-family: var(--display);
+      font-size: 1.05rem; font-weight: 700;
+      letter-spacing: -0.01em;
+      margin: 28px 0 10px; color: var(--text);
+    }
+    .doc p {
+      font-size: 1rem; color: var(--secondary);
+      line-height: 1.75; margin-bottom: 16px;
+    }
+    .doc p strong { color: var(--text); font-weight: 600; }
+    .doc ul { margin: 0 0 16px; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .doc li {
+      font-size: 1rem; color: var(--secondary);
+      line-height: 1.7;
+      padding: 18px 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+    .doc li strong { color: var(--text); font-weight: 600; }
+    .doc a { color: var(--orange-soft); text-decoration: none; border-bottom: 1px solid rgba(245,130,13,0.3); transition: border-color 0.2s; }
+    .doc a:hover { border-bottom-color: var(--orange-soft); }
+
+    footer {
+      position: relative; z-index: 2;
+      border-top: 1px solid var(--border);
+      padding: 44px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 20px;
+      max-width: 1280px; margin: 0 auto;
+    }
+    .foot-left { display: flex; align-items: center; gap: 12px; }
+    .foot-left img { width: 26px; height: 26px; border-radius: 7px; }
+    .foot-left .fn { font-family: var(--display); font-weight: 700; font-size: 1rem; }
+    .foot-left .fc { font-size: 0.78rem; color: var(--tertiary); margin-top: 2px; }
+    .foot-links { display: flex; gap: 26px; flex-wrap: wrap; }
+    .foot-links a { font-size: 0.82rem; color: var(--secondary); text-decoration: none; transition: color 0.2s; }
+    .foot-links a:hover { color: var(--text); }
+
+    @media (max-width: 768px) {
+      nav { padding: 15px 22px; }
+      .nav-right .hm { display: none; }
+      .doc { padding: 130px 22px 90px; }
+      footer { padding: 40px 22px; flex-direction: column; align-items: flex-start; }
+    }
   </style>
 </head>
 <body>
-  <nav><a href="/index.html">&#8592; Scrye</a></nav>
-  <h1>Privacy Policy</h1>
-  <p class="meta">Last updated: March 16, 2026</p>
 
-  <h2>About This Policy</h2>
-  <p>Scrye is an iOS app that helps you understand and manage your screen time. This policy describes how Scrye handles your data.</p>
+  <nav id="nav">
+    <a class="nav-logo" href="/">
+      <img src="/images/icon.png" alt="Scrye">
+      <span>Scrye</span>
+    </a>
+    <div class="nav-right">
+      <a href="/#how" class="hm">How it works</a>
+      <a href="https://instagram.com/scrye.app" target="_blank" rel="noopener" class="hm">Instagram</a>
+      <a href="/#get" class="nav-cta">Get the App</a>
+    </div>
+  </nav>
 
-  <h2>What Scrye Accesses</h2>
-  <p><strong>Screen time and app usage data</strong> — Scrye uses Apple's DeviceActivity framework to read your device usage. This access requires the Family Controls permission, which you must explicitly grant through iOS. All processing happens on-device and this data is not transmitted externally.</p>
-  <p><strong>App settings and preferences</strong> — Your app settings, limits, and preferences are saved locally on your device using iOS standard storage.</p>
+  <main class="doc">
+    <a href="/" class="doc-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to home
+    </a>
 
-  <h2>Data Collection</h2>
-  <p>Scrye does not require an account and does not collect personally identifiable information such as your name, email address, location, or contacts. There are no third-party analytics, advertising networks, or tracking SDKs in the app.</p>
+    <h1>Privacy Policy</h1>
+    <span class="doc-updated">Last updated: June 1, 2026</span>
 
-  <h2>Third Parties</h2>
-  <p>Scrye does not share data with third-party services. The app relies on Apple's Screen Time API, which operates within iOS and is subject to Apple's own privacy policies.</p>
+    <h2>About This Policy</h2>
+    <p>Scrye is an iOS app for understanding and managing screen time. This policy describes what information the app handles and how.</p>
 
-  <h2>Policy Updates</h2>
-  <p>This policy may be updated as the app evolves. When changes are made, the date above will be updated and material changes will be noted in the App Store release notes. Continued use of the app following an update constitutes acceptance of the revised policy.</p>
+    <h2>What Scrye Accesses</h2>
+    <p>Scrye uses Apple's DeviceActivity framework to read device usage through the Family Controls permission, which you must explicitly grant before any usage data can be read. All Screen Time processing happens on your device and that data is not transmitted to our servers or any third party.</p>
+    <p>App settings and preferences (your daily limit, focus sessions, scheduled blocks, streak history, etc.) are stored locally on your device using iOS standard storage methods.</p>
 
-  <h2>Governing Law</h2>
-  <p>This policy is governed by the laws of the Province of Ontario, Canada.</p>
+    <h2>Data Collection</h2>
+    <p>Scrye does not require an account and does not collect personally identifiable information such as your name, email address, or contacts.</p>
+    <p>Scrye uses two Google Firebase services to operate and improve the app:</p>
+    <ul>
+      <li><strong>Firebase Analytics</strong> measures how users interact with the app — which features are used, conversion funnels, retention — using anonymous event data. This includes a device identifier (Firebase Installation ID), iOS version, and event timestamps. It does not include personally identifying information. Apple's advertising identifier (IDFA) is not collected.</li>
+      <li><strong>Firebase Crashlytics</strong> captures crash diagnostics so we can identify and fix problems. This includes the device model, iOS version, stack traces, and recent log context from before the crash. Crash data is sent automatically when the app crashes.</li>
+      <li><strong>Problem reports submitted through the in-app "Report a Problem" feature</strong> are also sent through Crashlytics. When you submit a report, the note you type is included along with a snapshot of your current app state (such as your streak count, your active daily limit, and your subscription status). This does not include personally identifying information.</li>
+    </ul>
+    <p>Both services are governed by <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
+    <p>Your Screen Time data (app usage durations, daily totals, schedules) stays on your device. It is read via Apple's DeviceActivity framework and is never transmitted to our servers or any third party.</p>
 
-  <h2>Contact</h2>
-  <p>If you have questions about how Scrye handles your data, reach out at <a href="mailto:scrye.app@gmail.com">scrye.app@gmail.com</a>.</p>
+    <h2>Subscriptions and Payment</h2>
+    <p>Scrye offers auto-renewing subscriptions processed entirely by Apple through your Apple ID. We do not have access to your payment method, billing address, or any financial information. Apple's privacy policy governs how that information is handled.</p>
+
+    <h2>Third Parties</h2>
+    <p>Scrye does not share data with third parties other than as described above (Google Firebase for analytics and crash reporting). The app relies on Apple's Screen Time API, which operates within iOS under Apple's privacy policies.</p>
+
+    <h2>Data Deletion</h2>
+    <p>Scrye does not store your data on remote servers. To delete all of your Scrye data, uninstall the app from your device. This removes local Core Data storage and all shared preferences. Anonymous analytics events previously collected by Firebase remain in Google's systems subject to their retention policies.</p>
+
+    <h2>Age Requirement</h2>
+    <p>Scrye is intended for users aged 13 and older. It is not directed to children under 13, and we do not knowingly collect data from children.</p>
+
+    <h2>Policy Updates</h2>
+    <p>This policy may be updated as the app evolves. Material changes will be reflected in the "Last updated" date above and noted in App Store release notes. Continued use of the app following an update constitutes acceptance of the revised policy.</p>
+
+    <h2>Governing Law</h2>
+    <p>This policy is governed by the laws of Ontario, Canada.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this privacy policy can be directed to <a href="mailto:scrye.app@gmail.com">scrye.app@gmail.com</a>.</p>
+  </main>
+
+  <footer>
+    <div class="foot-left">
+      <img src="/images/icon.png" alt="Scrye">
+      <div>
+        <div class="fn">Scrye</div>
+        <div class="fc">© 2026 Scrye. All rights reserved.</div>
+      </div>
+    </div>
+    <div class="foot-links">
+      <a href="https://instagram.com/scrye.app" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://tiktok.com/@scrye.app" target="_blank" rel="noopener">TikTok</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="mailto:scrye.app@gmail.com">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+  </script>
+
 </body>
 </html>
